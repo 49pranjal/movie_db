@@ -17,6 +17,7 @@ The application provides the following functionality:
 - Offline support for Home, Bookmarks, and Movie Details screens
 - Home, Bookmarks, and Movie Details screens automatically updated when bookmark state changes
 - Share movies using a **custom deeplink** that opens the app directly to the Movie Details screen
+- Home page refreshes automatically from the API while preserving bookmarked movies
 
 ---
 
@@ -92,6 +93,7 @@ com.example.moviesdb/
 - API responses update the database
 - UI automatically reacts to database changes
 - Pagination is session-based
+- Bookmarks preserved across refreshes
 
 ### Movie Details
 - Network-first strategy with database fallback
@@ -171,7 +173,7 @@ To test the deep link:
 
 - **Improved bookmark synchronization**
   - Store bookmarks in a dedicated table
-  - Combine movie and bookmark data to support user-specific favorites across devices
+  - Combine movie and bookmark data to support user-specific bookmarks across devices
   
 - **Enhanced pagination support**
   - Improve pagination handling and UX consistency across all listing screens
