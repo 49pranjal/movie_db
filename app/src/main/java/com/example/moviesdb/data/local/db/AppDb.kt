@@ -1,7 +1,6 @@
 package com.example.moviesdb.data.local.db
 
 import androidx.room.Database
-import androidx.room.Entity
 import androidx.room.RoomDatabase
 import com.example.moviesdb.data.local.entity.MovieDetailsEntity
 import com.example.moviesdb.data.local.entity.MovieEntity

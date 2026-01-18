@@ -1,6 +1,5 @@
 package com.example.moviesdb.di
 
-import android.util.Log
 import com.example.moviesdb.BuildConfig
 import com.example.moviesdb.data.remote.TMDBApiService
 import com.example.moviesdb.utils.Constants

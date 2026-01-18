@@ -64,7 +64,7 @@ class BookmarkFragment : Fragment() {
 
         binding.rvBookmark.apply {
             layoutManager = GridLayoutManager(requireContext(), 2)
-            addItemDecoration(GridSpacingItemDecoration(2,16))
+            addItemDecoration(GridSpacingItemDecoration(16))
             adapter = bookmarAdapter
         }
     }

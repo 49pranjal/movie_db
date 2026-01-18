@@ -43,20 +43,17 @@ class AppRepository @Inject constructor(
     suspend fun fetchTrendingFromApi(page: Int): Result<Unit> =
         fetchMoviesAndCache(
             category = Category.TRENDING.value,
-            page = page,
             apiCall = { tmdbApiService.getTrending(page, apiKey) }
         )
 
     suspend fun fetchNowPlayingFromApi(page: Int): Result<Unit> =
         fetchMoviesAndCache(
             category = Category.NOW_PLAYING.value,
-            page = page,
             apiCall = { tmdbApiService.getNowPlaying(page, apiKey) }
         )
 
     private suspend fun fetchMoviesAndCache(
         category: String,
-        page: Int,
         apiCall: suspend () -> MovieListResponse
     ): Result<Unit> {
 

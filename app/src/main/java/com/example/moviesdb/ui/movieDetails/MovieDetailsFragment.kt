@@ -13,7 +13,6 @@ import com.bumptech.glide.Glide
 import com.example.moviesdb.R
 import com.example.moviesdb.databinding.FragmentMovieDetailsBinding
 import com.example.moviesdb.ui.uiModels.MovieDetailsModel
-import com.example.moviesdb.ui.uiModels.MovieDetailsUiState
 import com.example.moviesdb.utils.Constants
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.roundToInt
