@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.moviesdb.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/home_to_movieDetails"
+            app:destination="@+id/movieDetailsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_bookmark"
+        android:name="com.example.moviesdb.ui.bookmark.BookmarkFragment"
+        android:label="@string/title_bookmark"
+        tools:layout="@layout/fragment_boomark" >
+        <action
+            android:id="@+id/bookmark_to_movieDetails"
+            app:destination="@+id/movieDetailsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.example.moviesdb.ui.search.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/search_to_movieDetails"
+            app:destination="@+id/movieDetailsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieDetailsFragment"
+        android:name="com.example.moviesdb.ui.movieDetails.MovieDetailsFragment"
+        android:label="@string/title_movie_details"
+        tools:layout="@layout/fragment_movie_details">
+
+        <!-- Deep Link -->
+        <deepLink
+            app:uri="movieapp://movie/{movieId}" />
+
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+    </fragment>
+</navigation>
