@@ -24,6 +24,16 @@ interface AppDao {
     @Query("UPDATE movies SET isBookmarked = NOT isBookmarked WHERE id = :movieId")
     suspend fun toggleBookmark(movieId: Int)
 
+    @Query(
+        """
+    DELETE FROM movies 
+    WHERE category = :category 
+    AND isBookmarked = 0
+"""
+    )
+    suspend fun clearUnbookmarkedMoviesByCategory(category: String)
+
+
     //Query for Bookmark Screen
 
     @Query("SELECT * FROM movies WHERE isBookmarked = 1 ORDER BY dbId")

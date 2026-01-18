@@ -52,7 +52,7 @@ class HomeFragment : Fragment() {
 
                 // Loader (only when no data)
                 binding.homeProgressBar.isVisible =
-                    state.isLoading &&
+                    state.isLoading && state.error == null &&
                             state.trending.isEmpty() &&
                             state.nowPlaying.isEmpty()
 

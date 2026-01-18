@@ -43,17 +43,20 @@ class AppRepository @Inject constructor(
     suspend fun fetchTrendingFromApi(page: Int): Result<Unit> =
         fetchMoviesAndCache(
             category = Category.TRENDING.value,
+            page = page,
             apiCall = { tmdbApiService.getTrending(page, apiKey) }
         )
 
     suspend fun fetchNowPlayingFromApi(page: Int): Result<Unit> =
         fetchMoviesAndCache(
             category = Category.NOW_PLAYING.value,
+            page = page,
             apiCall = { tmdbApiService.getNowPlaying(page, apiKey) }
         )
 
     private suspend fun fetchMoviesAndCache(
         category: String,
+        page: Int,
         apiCall: suspend () -> MovieListResponse
     ): Result<Unit> {
 
@@ -62,6 +65,7 @@ class AppRepository @Inject constructor(
         }
 
         return try {
+
             //If movies with same Ids come then we can get its bookmark stage
             // and data is not corrupted in db
             val bookmarkedIds = appDao.getBookmarkedIds().toSet()
@@ -77,6 +81,11 @@ class AppRepository @Inject constructor(
                     category = category,
                     isBookmarked = bookmarkedIds.contains(it.id)
                 )
+            }
+
+            if (page == 1) {
+                // 🔥 Clear ONLY unbookmarked movies on fresh app launch
+                appDao.clearUnbookmarkedMoviesByCategory(category)
             }
 
             appDao.insertMovies(entities)
