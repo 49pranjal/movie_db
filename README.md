@@ -190,3 +190,15 @@ To test the deep link:
 - **Performance optimizations**
   - Add background data refresh strategies
   - Optimize database cleanup policies for time-sensitive content
+
+---
+
+## 📸 Screenshots
+
+| Home | Movie Details |
+|------|---------------|
+| ![image alt](https://github.com/49pranjal/movie_db/blob/6e21b707f83d779026a5f13f12982b3c8a0729fe/screenshot/Moviesdb_homepage.png) | ![image alt](https://github.com/49pranjal/movie_db/blob/6e21b707f83d779026a5f13f12982b3c8a0729fe/screenshot/Moviesdb_moviedetails.png) |
+
+| Search | Bookmark |
+|--------|-----------|
+| ![image alt](https://github.com/49pranjal/movie_db/blob/6e21b707f83d779026a5f13f12982b3c8a0729fe/screenshot/Moviesdb_search.png) | ![image alt](https://github.com/49pranjal/movie_db/blob/6e21b707f83d779026a5f13f12982b3c8a0729fe/screenshot/Moviesdb_bookmark.png) |
